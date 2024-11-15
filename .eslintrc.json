@@ -1,0 +1,38 @@
+{
+  // Define o analisador de código para TypeScript
+  "parser": "@typescript-eslint/parser",
+
+  // Adiciona plugins específicos para TypeScript, que ajudam na verificação de tipos e boas práticas
+  "plugins": ["@typescript-eslint"],
+
+  // Extende as configurações padrão recomendadas para ESLint e TypeScript, além de Prettier para formatação consistente
+  "extends": [
+    "eslint:recommended", // Regras recomendadas pelo ESLint, aplicáveis a JavaScript
+    "plugin:@typescript-eslint/recommended", // Regras recomendadas para o TypeScript usando o plugin do @typescript-eslint
+    "plugin:prettier/recommended" // Integração com Prettier para garantir que o código esteja formatado de acordo com as regras do Prettier
+  ],
+
+  // Define regras específicas para garantir maior rigor no código
+  "rules": {
+    // Exige que todas as funções tenham um tipo de retorno explícito
+    "@typescript-eslint/explicit-function-return-type": "error",
+
+    // Proíbe o uso do tipo 'any', garantindo que todos os tipos sejam explicitamente definidos
+    "@typescript-eslint/no-explicit-any": "error",
+
+    // Marca variáveis declaradas, mas não utilizadas, como erro
+    "@typescript-eslint/no-unused-vars": "error",
+
+    // Regras do Prettier para garantir consistência na formatação do código
+    "prettier/prettier": [
+      "error", // Gera um erro se o código não estiver formatado de acordo com essas regras
+      {
+        "singleQuote": true, // Usa aspas simples em vez de aspas duplas
+        "semi": true, // Exige ponto e vírgula no final das linhas
+        "trailingComma": "all", // Exige vírgula no final de objetos, arrays, etc.
+        "tabWidth": 2, // Define a largura da tabulação como 2 espaços
+        "endOfLine": "auto" // Ajusta automaticamente para o tipo de fim de linha do sistema
+      }
+    ]
+  }
+}

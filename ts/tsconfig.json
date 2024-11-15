@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "es2020", // Define o alvo do JavaScript gerado para ser compatível com ES2020, trazendo mais funcionalidades modernas.
+    "lib": ["dom", "dom.iterable", "esnext"], // Inclui bibliotecas que fornecem suporte para funcionalidades modernas e ambiente DOM.
+
+    // Mapeamento de módulo e caminho
+    "baseUrl": ".", // Define a raiz para resolver caminhos relativos, ajudando na organização do projeto.
+    "paths": {
+      "@components/*": ["src/components/*"], // Facilita importações, permitindo o uso de '@components' como atalho.
+      "@utils/*": ["src/utils/*"]
+    },
+
+    // Configurações de módulos
+    "module": "esnext", // Usa o sistema de módulos mais moderno, garantindo compatibilidade com funcionalidades modernas.
+    "moduleResolution": "node", // Usa resolução de módulos no estilo Node.js, essencial para desenvolvimento com npm e React.
+    "resolveJsonModule": true, // Permite importar arquivos JSON como módulos.
+    "allowSyntheticDefaultImports": true, // Permite a importação padrão para módulos que não possuem 'export default'.
+
+    // Configurações de JSX
+    "jsx": "react-jsx", // Usa JSX moderno, otimizado para React 17+.
+
+    // Controle de saída
+    "outDir": "./dist", // Define a pasta para saída dos arquivos compilados.
+    "sourceMap": true, // Gera mapas de origem, facilitando a depuração no navegador.
+
+    // Checagem rigorosa de tipos
+    "strict": true, // Ativa todas as verificações rigorosas de tipo do TypeScript.
+    "noImplicitAny": true, // Evita o uso de tipos 'any' implícitos.
+    "strictNullChecks": true, // Garante que valores null e undefined sejam tratados explicitamente.
+    "strictBindCallApply": true, // Verifica a segurança dos tipos usados em 'bind', 'call', e 'apply'.
+    "strictFunctionTypes": true, // Garante tipagem rígida para funções.
+    "strictPropertyInitialization": true, // Exige que as propriedades das classes sejam inicializadas ou marcadas como opcionais.
+    "noImplicitThis": true, // Não permite o uso de 'this' com tipagem implícita.
+    "alwaysStrict": true, // Garante que todos os arquivos sejam compilados em modo estrito.
+
+    // Configurações para garantir código limpo e evitar erros comuns
+    "noUnusedLocals": true, // Marca variáveis locais não utilizadas como erro.
+    "noUnusedParameters": true, // Marca parâmetros de funções não utilizados como erro.
+    "noImplicitReturns": true, // Garante que todas as funções retornem algo explicitamente quando necessário.
+    "noFallthroughCasesInSwitch": true, // Impede que um 'case' de um 'switch' caia diretamente em outro sem um 'break'.
+    "forceConsistentCasingInFileNames": true, // Impede problemas causados por diferenças de maiúsculas/minúsculas nos nomes dos arquivos.
+
+    // Segurança e compatibilidade adicional
+    "isolatedModules": true, // Verifica cada arquivo como um módulo independente, essencial para projetos que usam Babel.
+    "esModuleInterop": true, // Facilita a interoperabilidade entre CommonJS e ES Modules.
+    "useDefineForClassFields": true // Usa a nova semântica para inicialização de campos de classes para manter a compatibilidade com o JavaScript moderno.
+  },
+  "include": ["src/**/*"], // Inclui todos os arquivos na pasta 'src'.
+  "exclude": ["node_modules", "dist"] // Exclui pastas que não devem ser compiladas.
+}
